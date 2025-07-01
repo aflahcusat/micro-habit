@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Micro Habit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen">
+    <h1>MICRO HABIT</h1>
+    <input type="text" placeholder="Email or phone" id="loginEmail" />
+    <input type="password" placeholder="Password" id="loginPassword" />
+    <button class="login-btn">Log in</button>
+    <div class="links">
+      <a href="#">Sign up</a>
+      <a href="#" id="guestBtn">Continue as guest</a>
+    </div>
+    <button class="settings-btn" title="Create Profile">⚙️</button>
+  </div>
+
+  <!-- PROFILE CREATION MODAL -->
+  <div class="modal hidden" id="profileModal">
+    <div class="modal-content">
+      <h2>Create Your Profile</h2>
+      <input type="text" placeholder="Name" id="name"/>
+      <input type="number" placeholder="Age" id="age"/>
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <input type="number" placeholder="Height (cm)" id="height"/>
+      <input type="number" placeholder="Weight (kg)" id="weight"/>
+      <input type="tel" placeholder="Phone number" id="phone"/>
+      <input type="email" placeholder="Email" id="email"/>
+      <input type="password" placeholder="Create Password" id="password"/>
+      <button id="createProfileBtn">Create My Profile</button>
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup hidden" id="popupMessage">🎉 My profile is ready!</div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard hidden page" id="dashboardPage">
+    <div class="header">
+      <h2>Welcome to Micro Habit</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile" onclick="showPage('dailyPage')">Daily Habit <span class="dot">1</span></div>
+      <div class="tile" onclick="showPage('skillPage')">Skill Development <span class="dot">1</span></div>
+      <div class="tile" onclick="showPage('healthPage')">Health <span class="dot">1</span></div>
+      <div class="tile" onclick="showPage('jobPage')">Job <span class="dot">1</span></div>
+      <div class="tile" onclick="showPage('financePage')">Finance <span class="dot">1</span></div>
+      <div class="tile" onclick="showPage('socialPage')">Social <span class="dot">1</span></div>
+    </div>
+  </div>
+
+  <!-- Category Pages (dailyPage, skillPage, etc.) -->
+  <div class="hidden page" id="dailyPage">
+    <div class="header">
+      <button onclick="showPage('dashboardPage')">⬅ Back</button>
+      <h2>Daily Habits</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile">Wake up at 6AM</div>
+      <div class="tile">Drink 2L Water</div>
+      <div class="tile">10 Min Meditation</div>
+    </div>
+  </div>
+
+  <div class="hidden page" id="skillPage">
+    <div class="header">
+      <button onclick="showPage('dashboardPage')">⬅ Back</button>
+      <h2>Skill Development</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile">Learn a new word</div>
+      <div class="tile">Practice typing</div>
+      <div class="tile">Watch a tutorial</div>
+    </div>
+  </div>
+
+  <div class="hidden page" id="healthPage">
+    <div class="header">
+      <button onclick="showPage('dashboardPage')">⬅ Back</button>
+      <h2>Health</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile">Eat 2 fruits</div>
+      <div class="tile">Walk 5000 steps</div>
+    </div>
+  </div>
+
+  <div class="hidden page" id="jobPage">
+    <div class="header">
+      <button onclick="showPage('dashboardPage')">⬅ Back</button>
+      <h2>Job</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile">Update resume</div>
+      <div class="tile">Apply for 1 job</div>
+    </div>
+  </div>
+
+  <div class="hidden page" id="financePage">
+    <div class="header">
+      <button onclick="showPage('dashboardPage')">⬅ Back</button>
+      <h2>Finance</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile">Track expenses</div>
+      <div class="tile">Review budget</div>
+    </div>
+  </div>
+
+  <div class="hidden page" id="socialPage">
+    <div class="header">
+      <button onclick="showPage('dashboardPage')">⬅ Back</button>
+      <h2>Social</h2>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    <div class="grid">
+      <div class="tile">Call a friend</div>
+      <div class="tile">Post something positive</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
